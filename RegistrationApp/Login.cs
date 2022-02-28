@@ -7,6 +7,7 @@ using Android.Text;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using Google.Android.Material.TextField;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +15,14 @@ using System.Text;
 
 namespace RegistrationApp
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar")]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", WindowSoftInputMode = SoftInput.AdjustPan)]
     public class Login : AppCompatActivity
     {
         TextView createnew, textView1;
         Button mainloginBT;
         ImageButton googleBT, facebookBT;
+        TextInputEditText nametext, passwordtext;
+       
         ImageView loginWTgoogle, loginWTfacebook;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,7 +33,8 @@ namespace RegistrationApp
             Window.SetFlags(WindowManagerFlags.Fullscreen, WindowManagerFlags.Fullscreen);
             createnew = FindViewById<TextView>(Resource.Id.createlogic);
             createnew.Click += Createnew_Click;
-
+            nametext = FindViewById<TextInputEditText>(Resource.Id.editText2);
+            passwordtext = FindViewById<TextInputEditText>(Resource.Id.editText3);
             loginWTgoogle = FindViewById<ImageView>(Resource.Id.Loginwithgoogle);
             mainloginBT = FindViewById<Button>(Resource.Id.LoginButton);
             textView1 = FindViewById<TextView>(Resource.Id.textView1);
@@ -55,7 +59,18 @@ namespace RegistrationApp
         }
         private void MainloginBT_Click(object sender, EventArgs e)
         {
-            Toast.MakeText(this, "login Successfull", ToastLength.Short).Show();
+
+            if (!usernameok()  && !passwordok())
+            {
+                Toast.MakeText(this, "Task Failed Successfully", ToastLength.Long).Show();
+                return;
+            }
+
+            if (usernameok() &&  passwordok())
+            {
+                Toast.MakeText(this, "user successfully loggedin", ToastLength.Long).Show();
+
+            }
 
         }
 
@@ -69,7 +84,29 @@ namespace RegistrationApp
             Toast.MakeText(this, "You have been Logged in by Google", ToastLength.Short).Show();
         }
 
-
+        private bool passwordok()
+        {
+            var length1 = passwordtext.Length();
+            if (passwordtext.Text.Length < 8)
+            {
+                Toast.MakeText(this, "password of user is empty or less than 8", ToastLength.Long).Show();
+                passwordtext.Error = "password of the user is should not be less than 8";
+                return false;
+            }
+            else
+                return true;
+        }
+        private bool usernameok()
+        {
+            if (nametext.Text == "")
+            {
+                Toast.MakeText(this, "name of user is empty", ToastLength.Long).Show();
+                nametext.Error = "name of the user is not inserted";
+                return false;
+            }
+            else
+                return true;
+        }
 
         private void Createnew_Click(object sender, EventArgs e)
         {

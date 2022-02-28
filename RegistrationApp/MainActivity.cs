@@ -11,14 +11,18 @@ using Android.Widget;
 using Android.Graphics;
 using Android.Text;
 using Android.Content;
+using Google.Android.Material.TextField;
+using System.Text.RegularExpressions;
 
 namespace RegistrationApp
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar")]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar",WindowSoftInputMode =SoftInput.AdjustPan)]
     public class MainActivity : AppCompatActivity
     {
         TextView textView, loginPG;
         ImageView googleBT, facebookBT;
+        TextInputEditText nametext, emailtext, usernametext, passwordtext;
+
         Button registerBT;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -47,6 +51,20 @@ namespace RegistrationApp
 
         }
 
+        private void RegisterBT_Click(object sender, System.EventArgs e)
+        {
+            if (!usernameok() && !emailok() && !nameok() && !passwordok())
+            {
+                Toast.MakeText(this, "Task Failed Successfully", ToastLength.Long).Show();
+                return;
+            }
+
+            if (usernameok() && emailok() && nameok() && passwordok())
+            {
+                Toast.MakeText(this, "user successfully loggedin", ToastLength.Long).Show();
+
+            }
+        }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -70,10 +88,7 @@ namespace RegistrationApp
             StartActivity(intent);
         }
 
-        private void RegisterBT_Click(object sender, EventArgs e)
-        {
-            Toast.MakeText(this, "Registered Successfully", ToastLength.Short).Show();
-        }
+
 
         private void UIreferences()
         {
@@ -82,6 +97,67 @@ namespace RegistrationApp
             registerBT = FindViewById<Button>(Resource.Id.registerButton);
             textView = FindViewById<TextView>(Resource.Id.textView1);
             loginPG = FindViewById<TextView>(Resource.Id.loginTextView);
+            passwordtext = FindViewById<TextInputEditText>(Resource.Id.editText3);
+            emailtext = FindViewById<TextInputEditText>(Resource.Id.editText1);
+            nametext = FindViewById<TextInputEditText>(Resource.Id.editText2);
+            usernametext = FindViewById<TextInputEditText>(Resource.Id.myEditText0);
+        }
+        private bool usernameok()
+        {
+            if (nametext.Text == "")
+            {
+                Toast.MakeText(this, "name of user is empty", ToastLength.Long).Show();
+                nametext.Error = "name of the user is not inserted";
+                return false;
+            }
+            else
+                return true;
+        }
+
+        private bool nameok()
+        {
+            bool isEmail = Regex.IsMatch(emailtext.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+            if (emailtext.Text.Trim().Equals(""))
+            {
+                Toast.MakeText(this, "email of user is empty", ToastLength.Long).Show();
+                emailtext.Error = "email of the user is not inserted";
+                return false;
+            }
+            if (!isEmail)
+            {
+                Toast.MakeText(this, "Invalid Email", ToastLength.Long).Show();
+                emailtext.Error = "Invalid email address";
+                return false;
+            }
+
+
+            return true;
+        }
+
+        private bool emailok()
+        {
+
+            if (usernametext.Text == "")
+            {
+                Toast.MakeText(this, "username is empty", ToastLength.Long).Show();
+                usernametext.Error = "username of the user is not inserted";
+                return false;
+            }
+            else
+                return true;
+        }
+
+        private bool passwordok()
+        {
+            var length1 = passwordtext.Length();
+            if (passwordtext.Text.Length < 8)
+            {
+                Toast.MakeText(this, "password of user is empty or less than 8", ToastLength.Long).Show();
+                passwordtext.Error = "password of the user is should not be less than 8";
+                return false;
+            }
+            else
+                return true;
         }
     }
 }
