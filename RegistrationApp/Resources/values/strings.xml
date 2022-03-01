@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">RegistrationApp</string>
-    <string name="action_settings">Settings</string>
+	<string name="app_name">RegistrationApp</string>
+	<string name="action_settings">Settings</string>
+	<string name="RegistrationText">Register</string>
+	<string name="haveaccount">Having an account?</string>
+	<string name="LoginKey">Login</string>
+	<string name="LoginWith">Or Register With</string>
 </resources>

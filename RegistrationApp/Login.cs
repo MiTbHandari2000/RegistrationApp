@@ -18,10 +18,11 @@ namespace RegistrationApp
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", WindowSoftInputMode = SoftInput.AdjustPan, NoHistory = true)]
     public class Login : AppCompatActivity
     {
+        TextView forgotClk;
         TextInputLayout passwordlayout2;
         TextView createnew, textView1;
         Button mainloginBT;
-        ImageButton googleBT, facebookBT;
+
         TextInputEditText nametext, passwordtext;
 
         ImageView loginWTgoogle, loginWTfacebook;
@@ -39,8 +40,10 @@ namespace RegistrationApp
             loginWTgoogle = FindViewById<ImageView>(Resource.Id.Loginwithgoogle);
             mainloginBT = FindViewById<Button>(Resource.Id.LoginButton);
             textView1 = FindViewById<TextView>(Resource.Id.textView1);
+            forgotClk = FindViewById<TextView>(Resource.Id.forget1);
             passwordlayout2 = FindViewById<TextInputLayout>(Resource.Id.passwordlay2);
             loginWTfacebook = FindViewById<ImageView>(Resource.Id.Loginwithfacebook);
+            forgotClk.Click += ForgotClk_Click;
             loginWTgoogle.Click += LoginWTgoogle_Click;
             loginWTfacebook.Click += LoginWTfacebook_Click;
             mainloginBT.Click += MainloginBT_Click;
@@ -59,6 +62,12 @@ namespace RegistrationApp
             textView1.Paint.SetShader(textShader);
             // Create your application here
         }
+
+        private void ForgotClk_Click(object sender, EventArgs e)
+        {
+            Toast.MakeText(this, "Reset Password", ToastLength.Short).Show();
+        }
+
         private void MainloginBT_Click(object sender, EventArgs e)
         {
 

@@ -23,7 +23,7 @@
                 android:layout_marginBottom="5dp"
                 android:id="@+id/textView1"
                 android:textSize="30dp"
-                android:text="Register"
+                android:text="@string/RegistrationText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <LinearLayout
@@ -35,10 +35,10 @@
                     android:textStyle="bold"
                     android:textSize="15sp"
                     android:layout_width="wrap_content"
-                    android:text="Having an account?"
+                    android:text="@string/haveaccount"
                     android:layout_height="wrap_content"/>
                 <TextView
-                    android:text=" Login"
+                    android:text="@string/LoginKey"
                     android:textStyle="bold"
                     android:textSize="14sp"
                     android:id="@+id/loginTextView"
@@ -55,12 +55,14 @@
             app:boxCornerRadiusBottomEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"
             android:layout_width="match_parent"
+            
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:hint="Enter Name Of User"
                 android:id="@+id/myEditText0"
                 android:inputType="text"
+                android:singleLine="true"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                 android:drawableStart="@drawable/person"
                 android:drawablePadding="15dp"
@@ -140,7 +142,7 @@
             android:layout_height="55dp"/>
         <TextView
             android:layout_width="wrap_content"
-            android:text="Or Register With"
+            android:text="@string/LoginWith"
             android:layout_marginTop="25dp"
             android:textStyle="bold"
             android:textSize="14dp"
