@@ -15,14 +15,15 @@ using System.Text;
 
 namespace RegistrationApp
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", WindowSoftInputMode = SoftInput.AdjustPan)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", WindowSoftInputMode = SoftInput.AdjustPan, NoHistory = true)]
     public class Login : AppCompatActivity
     {
+        TextInputLayout passwordlayout2;
         TextView createnew, textView1;
         Button mainloginBT;
         ImageButton googleBT, facebookBT;
         TextInputEditText nametext, passwordtext;
-       
+
         ImageView loginWTgoogle, loginWTfacebook;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -38,6 +39,7 @@ namespace RegistrationApp
             loginWTgoogle = FindViewById<ImageView>(Resource.Id.Loginwithgoogle);
             mainloginBT = FindViewById<Button>(Resource.Id.LoginButton);
             textView1 = FindViewById<TextView>(Resource.Id.textView1);
+            passwordlayout2 = FindViewById<TextInputLayout>(Resource.Id.passwordlay2);
             loginWTfacebook = FindViewById<ImageView>(Resource.Id.Loginwithfacebook);
             loginWTgoogle.Click += LoginWTgoogle_Click;
             loginWTfacebook.Click += LoginWTfacebook_Click;
@@ -60,13 +62,13 @@ namespace RegistrationApp
         private void MainloginBT_Click(object sender, EventArgs e)
         {
 
-            if (!usernameok()  && !passwordok())
+            if (!usernameok() && !passwordok())
             {
                 Toast.MakeText(this, "Task Failed Successfully", ToastLength.Long).Show();
                 return;
             }
 
-            if (usernameok() &&  passwordok())
+            if (usernameok() && passwordok())
             {
                 Toast.MakeText(this, "user successfully loggedin", ToastLength.Long).Show();
 
@@ -89,8 +91,9 @@ namespace RegistrationApp
             var length1 = passwordtext.Length();
             if (passwordtext.Text.Length < 8)
             {
+
                 Toast.MakeText(this, "password of user is empty or less than 8", ToastLength.Long).Show();
-                passwordtext.Error = "password of the user is should not be less than 8";
+                passwordlayout2.Error = "password of the user is should not be less than 8";
                 return false;
             }
             else
@@ -112,6 +115,7 @@ namespace RegistrationApp
         {
             Intent intent = new Intent(this, typeof(MainActivity));
             StartActivity(intent);
+            //FinishAffinity();
         }
     }
 }

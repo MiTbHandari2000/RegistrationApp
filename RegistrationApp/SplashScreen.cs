@@ -11,7 +11,7 @@ using System.Text;
 
 namespace RegistrationApp
 {
-    [Activity(Label = "@string/app_name", MainLauncher = true, Theme = "@style/AppTheme.splash")]
+    [Activity(Label = "@string/app_name", MainLauncher = true, Theme = "@style/AppTheme.splash", NoHistory = true)]
     public class SplashScreen : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

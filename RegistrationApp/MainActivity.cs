@@ -16,9 +16,10 @@ using System.Text.RegularExpressions;
 
 namespace RegistrationApp
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar",WindowSoftInputMode =SoftInput.AdjustPan)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", WindowSoftInputMode = SoftInput.AdjustPan, NoHistory = true)]
     public class MainActivity : AppCompatActivity
     {
+        TextInputLayout passwordlayout;
         TextView textView, loginPG;
         ImageView googleBT, facebookBT;
         TextInputEditText nametext, emailtext, usernametext, passwordtext;
@@ -65,12 +66,12 @@ namespace RegistrationApp
 
             }
         }
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        //public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        //{
+        //    Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
+        //    base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        //}
         private void FacebookBT_Click(object sender, EventArgs e)
         {
             Toast.MakeText(this, "You have been Registered in by Facebook", ToastLength.Short).Show();
@@ -86,8 +87,9 @@ namespace RegistrationApp
 
             Intent intent = new Intent(this, typeof(Login));
             StartActivity(intent);
-        }
+            //FinishAffinity();
 
+        }
 
 
         private void UIreferences()
@@ -99,6 +101,7 @@ namespace RegistrationApp
             loginPG = FindViewById<TextView>(Resource.Id.loginTextView);
             passwordtext = FindViewById<TextInputEditText>(Resource.Id.editText3);
             emailtext = FindViewById<TextInputEditText>(Resource.Id.editText1);
+            passwordlayout = FindViewById<TextInputLayout>(Resource.Id.passwordlay);
             nametext = FindViewById<TextInputEditText>(Resource.Id.editText2);
             usernametext = FindViewById<TextInputEditText>(Resource.Id.myEditText0);
         }
@@ -153,7 +156,7 @@ namespace RegistrationApp
             if (passwordtext.Text.Length < 8)
             {
                 Toast.MakeText(this, "password of user is empty or less than 8", ToastLength.Long).Show();
-                passwordtext.Error = "password of the user is should not be less than 8";
+                passwordlayout.Error = "password of the user is should not be less than 8";
                 return false;
             }
             else
