@@ -19,7 +19,7 @@ namespace RegistrationApp
     public class Login : AppCompatActivity
     {
         TextView forgotClk;
-        TextInputLayout passwordlayout2;
+        TextInputLayout passwordlayout2, usernameerror;
         TextView createnew, textView1;
         Button mainloginBT;
 
@@ -40,6 +40,7 @@ namespace RegistrationApp
             loginWTgoogle = FindViewById<ImageView>(Resource.Id.Loginwithgoogle);
             mainloginBT = FindViewById<Button>(Resource.Id.LoginButton);
             textView1 = FindViewById<TextView>(Resource.Id.textView1);
+            usernameerror = FindViewById<TextInputLayout>(Resource.Id.Login_usernameError);
             forgotClk = FindViewById<TextView>(Resource.Id.forget1);
             passwordlayout2 = FindViewById<TextInputLayout>(Resource.Id.passwordlay2);
             loginWTfacebook = FindViewById<ImageView>(Resource.Id.Loginwithfacebook);
@@ -113,7 +114,7 @@ namespace RegistrationApp
             if (nametext.Text == "")
             {
                 Toast.MakeText(this, "name of user is empty", ToastLength.Long).Show();
-                nametext.Error = "name of the user is not inserted";
+                usernameerror.Error = "name of the user is not inserted";
                 return false;
             }
             else

@@ -19,7 +19,7 @@ namespace RegistrationApp
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", WindowSoftInputMode = SoftInput.AdjustPan, NoHistory = true)]
     public class MainActivity : AppCompatActivity
     {
-        TextInputLayout passwordlayout;
+        TextInputLayout passwordlayout, nameerror, emailaddresserror, username;
         TextView textView, loginPG;
         ImageView googleBT, facebookBT;
         TextInputEditText nametext, emailtext, usernametext, passwordtext;
@@ -100,6 +100,9 @@ namespace RegistrationApp
             textView = FindViewById<TextView>(Resource.Id.textView1);
             loginPG = FindViewById<TextView>(Resource.Id.loginTextView);
             passwordtext = FindViewById<TextInputEditText>(Resource.Id.editText3);
+            nameerror = FindViewById<TextInputLayout>(Resource.Id.NameError);
+            emailaddresserror = FindViewById<TextInputLayout>(Resource.Id.emailAddressError);
+            username = FindViewById<TextInputLayout>(Resource.Id.UsernameError);
             emailtext = FindViewById<TextInputEditText>(Resource.Id.editText1);
             passwordlayout = FindViewById<TextInputLayout>(Resource.Id.passwordlay);
             nametext = FindViewById<TextInputEditText>(Resource.Id.editText2);
@@ -110,7 +113,7 @@ namespace RegistrationApp
             if (nametext.Text == "")
             {
                 Toast.MakeText(this, "name of user is empty", ToastLength.Long).Show();
-                nametext.Error = "name of the user is not inserted";
+                username.Error = "name of the user is not inserted";
                 return false;
             }
             else
@@ -123,7 +126,7 @@ namespace RegistrationApp
             if (emailtext.Text.Trim().Equals(""))
             {
                 Toast.MakeText(this, "email of user is empty", ToastLength.Long).Show();
-                emailtext.Error = "email of the user is not inserted";
+                nameerror.Error = "email of the user is not inserted";
                 return false;
             }
             if (!isEmail)
@@ -143,7 +146,7 @@ namespace RegistrationApp
             if (usernametext.Text == "")
             {
                 Toast.MakeText(this, "username is empty", ToastLength.Long).Show();
-                usernametext.Error = "username of the user is not inserted";
+                emailaddresserror.Error = "username of the user is not inserted";
                 return false;
             }
             else

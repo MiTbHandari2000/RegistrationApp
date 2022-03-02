@@ -1,4 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<dimen name="fab_margin">16dp</dimen>
-	<dimen name="fab_margin">16dp</dimen>
+	<dimen name="Padding_Top">35dp</dimen>
+	<dimen name="Padding">45dp</dimen>
+	<dimen name="Layoutmargingbottom">5dp</dimen>
+	<dimen name="TextViewmargingbottom">25dp</dimen>
+	<dimen name="TitleTextSize">30sp</dimen>
+	<dimen name="TextSize">14sp</dimen>
+	<dimen name="Login_layout_marginTop_username">70dp</dimen>
+	<dimen name="Login_layout_marginTop_password">12dp</dimen>
+	<dimen name="Login_layout_marginTop_forgotpassword">8dp</dimen>
+	<dimen name="Login_layout_marginTop_orloginwith">40dp</dimen>
+	<dimen name="Login_layout_marginTop_logo">15dp</dimen>
+	<dimen name="Register_layout_marginTop_name">60dp</dimen>
+	<dimen name="Register_layout_marginTop_emailaddress">12dp</dimen>
+	<dimen name="Register_layout_marginTop_username">12dp</dimen>
+	<dimen name="Register_layout_marginTop_password">12dp</dimen>
+	<dimen name="Register_layout_marginTop_RegisterButton">30dp</dimen>
+	<dimen name="Register_layout_marginTop_orRegisterwith">25dp</dimen>
+	<dimen name="Register_layout_marginTop_logo">15dp</dimen>
+	<dimen name="boxCornerRadiusTopStart">10dp</dimen>
+	<dimen name="boxCornerRadiusTopEnd">10dp</dimen>
+	<dimen name="boxCornerRadiusBottomEnd">10dp</dimen>
+	<dimen name="boxCornerRadiusBottomStart">10dp</dimen>
+	<dimen name="drawablePadding">15dp</dimen>
+	<dimen name="ButtonTextSize">18sp</dimen>
+	<dimen name="Button_layout_width">220dp</dimen>
+	<dimen name="paddingVertical">10dp</dimen>
+	<dimen name="cornerRadius">25dp</dimen>
+	<dimen name="Logo_layout_width">45dp</dimen>
+	<dimen name="Logo_layout_height">45dp</dimen>
+	<dimen name="Logo_layout_margin">10dp</dimen>
 </resources>

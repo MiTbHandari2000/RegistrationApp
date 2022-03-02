@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:padding="45dp"
+    android:padding="@dimen/Padding"
     android:background="@drawable/bgimg"
     android:layout_height="match_parent">
     <LinearLayout
-        android:paddingTop="35dp"
+        android:paddingTop="@dimen/Padding_Top"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:gravity="center_horizontal"
@@ -19,9 +19,9 @@
             android:layout_height="wrap_content">
             <TextView
                 android:textStyle="bold"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="@dimen/Layoutmargingbottom"
                 android:id="@+id/textView1"
-                android:textSize="30sp"
+                android:textSize="@dimen/TitleTextSize"
                 android:text="@string/LoginTitle"                
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -32,13 +32,13 @@
 
                 <TextView
                     android:textStyle="bold"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/TextSize"
                     android:layout_width="wrap_content"
                     android:text="@string/DontHaveDialog"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:textStyle="bold"
-                     android:textSize="14sp"
+                     android:textSize="@dimen/TextSize"
                     android:id="@+id/createlogic"
                     android:text="@string/CreateAccount"
                     android:textColor="@color/newAccountColor"
@@ -48,11 +48,12 @@
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="70dp"
-            app:boxCornerRadiusTopStart="10dp"            
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:boxCornerRadiusBottomStart="10dp"
+            android:layout_marginTop="@dimen/Login_layout_marginTop_username"
+            app:boxCornerRadiusTopStart="@dimen/boxCornerRadiusTopStart"
+            android:id="@+id/Login_usernameError"
+            app:boxCornerRadiusTopEnd="@dimen/boxCornerRadiusTopEnd"
+            app:boxCornerRadiusBottomEnd="@dimen/boxCornerRadiusBottomEnd"
+            app:boxCornerRadiusBottomStart="@dimen/boxCornerRadiusBottomStart"
             android:layout_width="match_parent"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_height="wrap_content">
@@ -61,18 +62,18 @@
                 android:id="@+id/editText2"
                 android:inputType="text"
                 android:drawableStart="@drawable/person"
-                android:drawablePadding="15dp"
+                android:drawablePadding="@dimen/drawablePadding"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="12dp"
-            app:boxCornerRadiusTopStart="10dp"
-            app:boxCornerRadiusTopEnd="10dp"
+            android:layout_marginTop="@dimen/Login_layout_marginTop_password"
+            app:boxCornerRadiusTopStart="@dimen/boxCornerRadiusTopStart"
+            app:boxCornerRadiusTopEnd="@dimen/boxCornerRadiusTopEnd"
             android:id="@+id/passwordlay2"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusBottomEnd="@dimen/boxCornerRadiusBottomEnd"
+            app:boxCornerRadiusBottomStart="@dimen/boxCornerRadiusBottomStart"
             android:layout_width="match_parent"
             app:passwordToggleEnabled="true"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -82,7 +83,7 @@
                 android:id="@+id/editText3"
                 android:inputType="textPassword"
                 android:drawableStart="@drawable/passkey"
-                android:drawablePadding="15dp"
+                android:drawablePadding="@dimen/drawablePadding"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -91,35 +92,35 @@
         <TextView
             android:layout_gravity="right"
             android:text="@string/ForgotPasswordClick"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/Login_layout_marginTop_forgotpassword"
             android:textStyle="bold"
             android:id="@+id/forget1"
-            android:layout_marginBottom="25dp"
-            android:textSize="14sp"
+            android:layout_marginBottom="@dimen/TextViewmargingbottom"
+            android:textSize="@dimen/TextSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/LoginButton"
-            android:layout_width="200dp"
-            android:backgroundTint="#1c57ef"
+            android:layout_width="@dimen/Button_layout_width"
+            android:backgroundTint="@color/Button_Background_color"
             android:text="@string/LoginButtonForLoginPage"
             android:textAllCaps="false"            
-            android:textSize="17sp"
+            android:textSize="@dimen/ButtonTextSize"
          
-            android:paddingVertical="10dp"
-            app:cornerRadius="25dp"
+            android:paddingVertical="@dimen/paddingVertical"
+            app:cornerRadius="@dimen/cornerRadius"
             android:layout_height="wrap_content"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:text="@string/OrloginwithForLoginpage"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="@dimen/Login_layout_marginTop_orloginwith"
             android:textStyle="bold"
-            android:textSize="14sp"
+            android:textSize="@dimen/TextSize"
             android:layout_height="wrap_content"/>
         <LinearLayout
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/Login_layout_marginTop_logo"
             android:gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:orientation="horizontal"
@@ -127,17 +128,17 @@
 
             <ImageView
                 android:id="@+id/Loginwithfacebook"
-                android:layout_width="45dp"                
+                android:layout_width="@dimen/Logo_layout_width"                
                 android:src="@drawable/facebook"
-                android:layout_height="45dp"
-                android:layout_margin="10dp"
+                android:layout_height="@dimen/Logo_layout_height"
+                android:layout_margin="@dimen/Logo_layout_margin"
                 />
             <ImageView
                 android:id="@+id/Loginwithgoogle"
-                android:layout_width="45dp"
+                android:layout_width="@dimen/Logo_layout_width"
                 android:src="@drawable/google"
-                android:layout_height="45dp"
-                android:layout_margin="10dp"/>
+                android:layout_height="@dimen/Logo_layout_height"
+                android:layout_margin="@dimen/Logo_layout_margin"/>
         </LinearLayout>
     </LinearLayout>
 
