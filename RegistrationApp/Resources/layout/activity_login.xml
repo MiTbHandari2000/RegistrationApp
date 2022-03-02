@@ -21,8 +21,8 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="5dp"
                 android:id="@+id/textView1"
-                android:textSize="30dp"
-                android:text="Login"                
+                android:textSize="30sp"
+                android:text="@string/LoginTitle"                
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <LinearLayout
@@ -32,15 +32,15 @@
 
                 <TextView
                     android:textStyle="bold"
-                         android:textSize="14dp"
+                    android:textSize="14sp"
                     android:layout_width="wrap_content"
-                    android:text="Don't have an account?"
+                    android:text="@string/DontHaveDialog"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:textStyle="bold"
-                     android:textSize="14dp"
+                     android:textSize="14sp"
                     android:id="@+id/createlogic"
-                    android:text=" Create your account"
+                    android:text="@string/CreateAccount"
                     android:textColor="@color/newAccountColor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -57,7 +57,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
-                android:hint="Enter Username"
+                android:hint="@string/HintForUserName"
                 android:id="@+id/editText2"
                 android:inputType="text"
                 android:drawableStart="@drawable/person"
@@ -78,7 +78,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
-                android:hint="Enter Password"
+                android:hint="@string/EnterPasswordHint"
                 android:id="@+id/editText3"
                 android:inputType="textPassword"
                 android:drawableStart="@drawable/passkey"
@@ -90,12 +90,12 @@
 
         <TextView
             android:layout_gravity="right"
-            android:text="Forgot Password?"
+            android:text="@string/ForgotPasswordClick"
             android:layout_marginTop="8dp"
             android:textStyle="bold"
             android:id="@+id/forget1"
             android:layout_marginBottom="25dp"
-            android:textSize="14dp"
+            android:textSize="14sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -103,20 +103,20 @@
             android:id="@+id/LoginButton"
             android:layout_width="200dp"
             android:backgroundTint="#1c57ef"
-            android:text="Login"
+            android:text="@string/LoginButtonForLoginPage"
             android:textAllCaps="false"            
             android:textSize="17sp"
-            android:layout_marginHorizontal="0dp"
+         
             android:paddingVertical="10dp"
             app:cornerRadius="25dp"
             android:layout_height="wrap_content"/>
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="Or Login With"
+            android:text="@string/OrloginwithForLoginpage"
             android:layout_marginTop="40dp"
             android:textStyle="bold"
-            android:textSize="14dp"
+            android:textSize="14sp"
             android:layout_height="wrap_content"/>
         <LinearLayout
             android:layout_marginTop="15dp"

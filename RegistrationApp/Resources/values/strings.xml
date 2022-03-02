@@ -5,4 +5,19 @@
 	<string name="haveaccount">Having an account?</string>
 	<string name="LoginKey">Login</string>
 	<string name="LoginWith">Or Register With</string>
+	<string name="Hintforname">Enter Name Of User</string>
+	<string name="Hintforemail">Enter Email Address</string>
+	<string name="HintForUserName">Enter User Name</string>
+	<string name="hintforregistrationpassword">Enter Password</string>
+	<string name="RegistrationButton">Register</string>
+	<string name="LoginTitle">Login</string>
+	<string name="DontHaveDialog">Dont have an account?</string>
+	<string name="CreateAccount"> Create your account</string>
+	<string name="UserNamehint">Enter Username</string>
+	<string name="EnterPasswordHint">Enter Password</string>
+	<string name="ForgotPasswordClick">Forgot Password?</string>
+	<string name="LoginButtonForLoginPage">Login</string>
+	<string name="OrloginwithForLoginpage">Or Login With</string>
+
+
 </resources>
